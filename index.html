@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Task Ranking</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<style>
+  table, tr, td {
+    text-align: center;
+  }
+   
+</style>
+<body class="bg-gradient-to-t from-blue-300 to-green-300 h-[100vh]">
+    <main>
+      <!-- Title and Logo Area -->
+      <div class="flex items-center justify-center border-b-slate-400 border-2">
+        <h3 class="font-bold text-xl my-3">Daily Task Ranking</h3>
+      </div>
+
+      <div id="loader" class="flex justify-center items-center">
+        <h1 class="text-center"> 
+          <span class="w-12 loading loading-dots loading-lg"></span>
+          <p class="mb-2">কিছুক্ষণ অপেক্ষা করুন, পড়তে থাকুন...</p>
+          <p class="text-green-900">সুবহানাল্লাহ...</p>
+          <p class="text-blue-900">আলহামদুলিল্লাহ...</p>
+          <p class="text-pink-900">লা ইলাহা ইল্লাল্লহ...</p>
+          
+        </h1>
+      </div>
+        <!-- Table Content -->
+        <div id="ranking-div" class="overflow-x-auto hidden">
+            <table class="table">
+              <!-- head -->
+              <thead>
+                <tr class="font-bold text-sm">
+                  <th>SL</th>
+                  <th>Name</th>
+                  <th title="Total Submitted">T.S</th>
+                  <th>Avarage Score</th>
+                </tr>
+              </thead>
+              <tbody id = 'user-content-area' class="table-body"> 
+
+                
+                <!-- row 1 -->
+                
+                <!-- <tr class="bg-green-200">
+                  <th>1</th>
+                  <td>Ornil Muhammad Asif</td>
+                  <td>0</td>
+                  <td>Red</td>
+                </tr> -->
+              </tbody>
+            </table>
+          </div>
+    </main>
+
+
+    <script src="ranking.js"></script>
+
+  </body>
+</html>
