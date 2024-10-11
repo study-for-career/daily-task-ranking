@@ -10,21 +10,27 @@ fetch('https://script.googleusercontent.com/macros/echo?user_content_key=i7Onz-a
     .then(data => 
     {
         
-        // console.log(data)
+        // console.log(data[2])
         let singleUserData = data.map(function (singleUser){
-                        
+
         const userScore = singleUser[1].split(',');
 
-        const total = userScore.reduce((pre, curr)=> {
+        const currentMonthSubmition = userScore.length - singleUser[2];
+            
+        // Get scores of the current month
+        const currentMonthScores = userScore.slice(0, currentMonthSubmition);
+
+        const total = currentMonthScores.reduce((pre, curr)=> {
             return  pre + parseFloat(curr);
         }, 0)
-        const avg = total * 100/(userScore.length * 10);
+        // console.log(total)
+        const avg = total * 100/(currentMonthScores.length * 10);
                 
         avgArr.push(
-            {user: singleUser[0], scores: avg, totalSubmit: userScore.length}
+            {user: singleUser[0], scores: avg, totalSubmit: currentMonthScores.length, preTotalSubmit: singleUser[2]}
         )
         })
-        
+        // console.log(avgArr)
         const rank = avgArr.sort((a, b) => b.scores - a.scores);
         
         const finalRanking = rank.map((singleRank, index)=> {
