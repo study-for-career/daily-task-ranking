@@ -7,15 +7,15 @@ const date30 = [
 
 const dateContainer = document.getElementById('date');
 
-setInterval(()=>{
-    // colonContainer.innerText = '';
-    dateContainer.classList.remove('text-red-600');
-}, 1000)
+// setInterval(()=>{
+//     // colonContainer.innerText = '';
+//     dateContainer.classList.remove('text-red-600');
+// }, 1000)
 
-setInterval(()=>{
-    // colonContainer.innerText = ' ';
-    dateContainer.classList.add('text-red-600');
-}, 2000)
+// setInterval(()=>{
+//     // colonContainer.innerText = ' ';
+//     dateContainer.classList.add('text-red-600');
+// }, 2000)
 
 
 const date = new Date();
