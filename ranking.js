@@ -57,4 +57,28 @@ fetch('https://script.googleusercontent.com/macros/echo?user_content_key=i7Onz-a
         
     );
 
-  
+const date30 = [
+    0, '১','২','৩','৪','৫','৬','৭','৮','৯','১০',
+    '১১','১২','১৩','১৪','১৫','১৬','১৭','১৮','১৯','২০',
+    '২১','২২','২৩','২৪','২৫','২৬','২৭','২৮','২৯','৩০'
+]
+
+const dateContainer = document.getElementById('date');
+
+setInterval(()=>{
+    // colonContainer.innerText = '';
+    dateContainer.classList.remove('text-red-600');
+}, 1000)
+
+setInterval(()=>{
+    // colonContainer.innerText = ' ';
+    dateContainer.classList.add('text-red-600');
+}, 2000)
+
+
+const date = new Date();
+const day = date.getUTCDate();
+
+const arabicDate = date30[day - 4];
+
+dateContainer.innerText = arabicDate;
