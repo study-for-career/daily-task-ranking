@@ -41,24 +41,28 @@ fetch('https://script.googleusercontent.com/macros/echo?user_content_key=i7Onz-a
 
         const userScore = singleUser[1].split(',');
 
+        
         const currentMonthSubmition = userScore.length - singleUser[2];
-            
+
         // Get scores of the current month
         const currentMonthScores = userScore.slice(0, currentMonthSubmition);
-
+            // console.log(currentMonthScores)
         const total = currentMonthScores.reduce((pre, curr)=> {
             return  pre + parseFloat(curr);
         }, 0)
         // console.log(total)
-        const avg = total * 100/(currentMonthScores.length * 10);
-                
+        const avg = total * 100/(currentMonthScores.length ? currentMonthScores.length * 10 : 1 * 10);
+              console.log(currentMonthSubmition, total, currentMonthScores.length)  
+
         avgArr.push(
             {user: singleUser[0], scores: avg, totalSubmit: currentMonthScores.length, preTotalSubmit: singleUser[2]}
         )
         })
-        // console.log(avgArr)
-        const rank = avgArr.sort((a, b) => b.scores - a.scores);
+        const validScores = avgArr.filter((invalid)=> !isNaN(invalid.scores))
         
+        // change validScores to avgArr to show all participants
+        const rank = avgArr.sort((a, b) => b.scores - a.scores);
+        // console.log(rank)
         const finalRanking = rank.map((singleRank, index)=> {
         
         const tr = document.createElement('tr');
