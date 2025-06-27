@@ -9,9 +9,9 @@ const dateContainer = document.getElementById('date');
 
 
 const date = new Date();
-const day = date.getUTCDate();
+const day = date.getUTCDate() - 1;
 
-const arabicDate = date30[day - 1];
+const arabicDate = date30[day];
 
 dateContainer.innerText = arabicDate;
 
