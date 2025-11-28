@@ -11,7 +11,7 @@ const dateContainer = document.getElementById('date');
 const date = new Date();
 const day = date.getUTCDate();
 
-const arabicDate = date30[day + 8];
+const arabicDate = date30[day - 22];
 
 dateContainer.innerText = arabicDate;
 
